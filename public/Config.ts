@@ -4,7 +4,7 @@ interface configInterface {
   ext: string;
   location: string;
   subDirectory: boolean;
-  unit: boolean;
+  unit: string;
   remove: boolean;
   handler: string;
   destination: string;
@@ -20,7 +20,7 @@ export class Config {
   private ext: string;
   private location: string;
   private subDirectory: boolean;
-  private unit: boolean;
+  private unit: string;
   private remove: boolean;
   private handler: string;
   private destination: string;
