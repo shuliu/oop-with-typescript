@@ -1,17 +1,4 @@
-
-/** config interface */
-interface configInterface {
-  ext: string;
-  location: string;
-  subDirectory: boolean;
-  unit: string;
-  remove: boolean;
-  handler: string;
-  destination: string;
-  dir: string;
-  connectionString: string;
-
-}
+import { ConfigInterface } from './interface/ConfigInterface';
 
 /**
  * Config class
@@ -27,7 +14,7 @@ export class Config {
   private dir: string;
   private connectionString: string;
 
-  constructor(option: configInterface) {
+  constructor(option: ConfigInterface) {
     this.ext = option.ext;
     this.location = option.location;
     this.subDirectory = option.subDirectory;

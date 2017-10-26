@@ -1,10 +1,4 @@
-
-/** config interface */
-interface ScheduleInterface {
-  ext: string;
-  time: string;
-  interval: string;
-}
+import { ScheduleInterface } from './interface/ScheduleInterface';
 
 /**
  * Schedule class
