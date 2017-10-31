@@ -6,7 +6,7 @@ export class ConfigManager {
   public configs: Array<Config>;
   constructor() {}
 
-  Config() {
+  ProcessConfigs() {
     let readConfig: any = fs.readFileSync('./config/config.json', 'utf8');
     let configJson = JSON.parse(readConfig);
     this.configs = configJson.configs;

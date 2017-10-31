@@ -6,7 +6,7 @@ export class ScheduleManager {
   public schedules: Array<Schedule>;
   constructor() {}
 
-  Schedule() {
+  ProcessSchedules() {
     let readSchedule: any = fs.readFileSync('./config/Schedule.json', 'utf8');
     let ScheduleJson = JSON.parse(readSchedule);
     this.schedules = ScheduleJson.Schedule;
