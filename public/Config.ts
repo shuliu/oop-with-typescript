@@ -15,6 +15,7 @@ export class Config {
   private readonly connectionString: string;
 
   constructor(option: ConfigInterface) {
+    // console.log(option);
     this.ext = option.ext;
     this.location = option.location;
     this.subDirectory = option.subDirectory;
