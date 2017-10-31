@@ -4,9 +4,9 @@ import { ScheduleInterface } from './interface/ScheduleInterface';
  * Schedule class
  */
 export class Schedule {
-  private ext: string;
-  private time: string;
-  private interval: string;
+  private readonly ext: string;
+  private readonly time: string;
+  private readonly interval: string;
 
   constructor(option: ScheduleInterface) {
     this.ext = option.ext;
@@ -14,9 +14,9 @@ export class Schedule {
     this.interval = option.interval;
   }
 
-  get getExt() { return this.ext; }
-  get getTime() { return this.time; }
-  get getInterval() { return this.interval; }
+  get Ext() { return this.ext; }
+  get Time() { return this.time; }
+  get Interval() { return this.interval; }
 
 
 }

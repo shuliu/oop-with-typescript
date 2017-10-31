@@ -4,15 +4,15 @@ import { ConfigInterface } from './interface/ConfigInterface';
  * Config class
  */
 export class Config {
-  private ext: string;
-  private location: string;
-  private subDirectory: boolean;
-  private unit: string;
-  private remove: boolean;
-  private handler: string;
-  private destination: string;
-  private dir: string;
-  private connectionString: string;
+  private readonly ext: string;
+  private readonly location: string;
+  private readonly subDirectory: boolean;
+  private readonly unit: string;
+  private readonly remove: boolean;
+  private readonly handler: string;
+  private readonly destination: string;
+  private readonly dir: string;
+  private readonly connectionString: string;
 
   constructor(option: ConfigInterface) {
     this.ext = option.ext;
@@ -26,15 +26,15 @@ export class Config {
     this.connectionString = option.connectionString;
   }
 
-  get getExt() { return this.ext; }
-  get getLocation() { return this.location; }
-  get getSubDirectory() { return this.subDirectory; }
-  get getUnit() { return this.unit; }
-  get getRemove() { return this.remove; }
-  get getHandler() { return this.handler; }
-  get getDestination() { return this.destination; }
-  get getDir() { return this.dir; }
-  get getConnectionString() { return this.connectionString; }
+  get Ext() { return this.ext; }
+  get Location() { return this.location; }
+  get SubDirectory() { return this.subDirectory; }
+  get Unit() { return this.unit; }
+  get Remove() { return this.remove; }
+  get Handler() { return this.handler; }
+  get Destination() { return this.destination; }
+  get Dir() { return this.dir; }
+  get ConnectionString() { return this.connectionString; }
 
 
 }

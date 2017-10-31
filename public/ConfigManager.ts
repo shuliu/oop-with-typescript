@@ -6,11 +6,14 @@ export class ConfigManager {
   public configs: Array<Config>;
   constructor() {}
 
-  setConfig() {
+  Config() {
     let readConfig: any = fs.readFileSync('./config/config.json', 'utf8');
     let configJson = JSON.parse(readConfig);
     this.configs = configJson.configs;
-    // return this.configs;
+  }
+
+  get Count() {
+    return this.configs.length;
   }
 
 }
