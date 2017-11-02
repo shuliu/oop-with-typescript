@@ -1,17 +1,15 @@
 import * as fs from 'fs';
 
+import { JsonManager } from './JsonManager';
 import { Schedule } from './Schedule';
 
-export class ScheduleManager {
+export class ScheduleManager extends JsonManager {
   public schedules: Array<Schedule> = [];
-  constructor() {}
 
   ProcessSchedules() {
-    let readConfig: any = fs.readFileSync('./config/Schedule.json', 'utf8');
-    let ScheduleJson = JSON.parse(readConfig);
-    console.log(ScheduleJson.schedules[0]);
-    for (let index = 0; index < ScheduleJson.schedules.length; index++) {
-      let schedule = new Schedule(ScheduleJson.schedules[index]);
+    let readSchedule = this.GetJsonObject('./config/Schedule.json');
+    for (let index = 0; index < readSchedule.schedules.length; index++) {
+      let schedule = new Schedule(readSchedule.schedules[index]);
       this.schedules.push(schedule);
     }
 

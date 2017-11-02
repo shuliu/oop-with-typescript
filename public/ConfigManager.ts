@@ -1,16 +1,15 @@
 import * as fs from 'fs';
 
 import { Config } from './Config';
+import { JsonManager } from './JsonManager';
 
-export class ConfigManager {
+export class ConfigManager extends JsonManager {
   public configs: Array<Config> = [];
-  constructor() {}
 
   ProcessConfigs() {
-    let readConfig: any = fs.readFileSync('./config/config.json', 'utf8');
-    let configJson = JSON.parse(readConfig);
-    for (let index = 0; index < configJson.configs.length; index++) {
-      let config = new Config(configJson.configs[index]);
+    let readConfig = this.GetJsonObject('./config/config.json');
+    for (let index = 0; index < readConfig.configs.length; index++) {
+      let config = new Config(readConfig.configs[index]);
       this.configs.push(config);
     }
 
