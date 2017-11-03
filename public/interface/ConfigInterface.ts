@@ -6,7 +6,7 @@ export interface ConfigInterface {
   subDirectory: boolean;
   unit: string;
   remove: boolean;
-  handler: string;
+  handler: Array<string>;
   destination: string;
   dir: string;
   connectionString: string;

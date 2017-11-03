@@ -9,7 +9,7 @@ export class Config {
   private readonly subDirectory: boolean;
   private readonly unit: string;
   private readonly remove: boolean;
-  private readonly handler: string;
+  private readonly handler: Array<string>;
   private readonly destination: string;
   private readonly dir: string;
   private readonly connectionString: string;
