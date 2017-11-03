@@ -10,8 +10,7 @@ export class ConfigManager extends JsonManager {
   ProcessJsonConfig() {
     let configObject = this.GetJsonObject(this.path);
     for (let index = 0; index < configObject.configs.length; index++) {
-      let config = new Config(configObject.configs[index]);
-      this.configs.push(config);
+      this.configs.push(new Config(configObject.configs[index]));
     }
 
   }

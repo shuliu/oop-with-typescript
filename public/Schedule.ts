@@ -18,5 +18,4 @@ export class Schedule {
   get Time() { return this.time; }
   get Interval() { return this.interval; }
 
-
 }

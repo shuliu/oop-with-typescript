@@ -10,8 +10,7 @@ export class ScheduleManager extends JsonManager {
   ProcessJsonConfig() {
     let scheduleObject = this.GetJsonObject(this.path);
     for (let index = 0; index < scheduleObject.schedules.length; index++) {
-      let schedule = new Schedule(scheduleObject.schedules[index]);
-      this.schedules.push(schedule);
+      this.schedules.push(new Schedule(scheduleObject.schedules[index]));
     }
 
   }
@@ -22,4 +21,5 @@ export class ScheduleManager extends JsonManager {
     }
     return this.schedules.length;
   }
+
 }

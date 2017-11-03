@@ -15,7 +15,6 @@ export class Config {
   private readonly connectionString: string;
 
   constructor(option: ConfigInterface) {
-    // console.log(option);
     this.ext = option.ext;
     this.location = option.location;
     this.subDirectory = option.subDirectory;
@@ -36,6 +35,5 @@ export class Config {
   get Destination() { return this.destination; }
   get Dir() { return this.dir; }
   get ConnectionString() { return this.connectionString; }
-
 
 }
