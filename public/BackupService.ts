@@ -6,9 +6,6 @@ import { ScheduleManager } from './managers/ScheduleManager';
 
 export class BackupService {
 
-  private configManager: ConfigManager;
-  private scheduleManager: ScheduleManager;
-
   private managers: Array<JsonManager> = [];
 
   constructor() {
