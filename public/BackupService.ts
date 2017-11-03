@@ -6,50 +6,23 @@ import { ScheduleManager } from './managers/ScheduleManager';
 
 export class BackupService {
 
-  private myConfig;
-  private mySchedule;
+  private configManager: ConfigManager;
+  private scheduleManager: ScheduleManager;
 
-  private managers: JsonManager;
+  private managers: Array<JsonManager> = [];
 
   constructor() {
-    this.myConfig = new ConfigManager();
-    this.mySchedule = new ScheduleManager();
+
+    this.managers.push(new ConfigManager());
+    this.managers.push(new ScheduleManager());
   }
 
-  ProcessJSONConfig() {
-    this.myConfig.ProcessJsonConfig();
-    this.mySchedule.ProcessJsonConfig();
-  }
+  ProcessJsonConfigs() {
 
-  DoBackup() {
-
-    for (let index = 0; index <  this.myConfig.Count; index++) {
-      let element = this.myConfig.configs[index];
-
-      let ext = element.Ext;
-      let location = element.Location;
-      let subDirectory = element.SubDirectory;
-      let unit = element.Unit;
-      let remove = element.Remove;
-      let handler = element.Handler;
-      let destination = element.Destination;
-      let dir = element.Dir;
-      let connectionString = element.ConnectionString;
-
-      console.log(element.Ext);
-
-    }
-
-    for (let index = 0; index <  this.mySchedule.Count; index++) {
-      let element = this.mySchedule.schedules[index];
-
-      let ext = element.Ext;
-      let time = element.Time;
-      let interval = element.Interval;
-
-      console.log(element.Ext);
-
-    }
+    this.managers.forEach(function(v, i){
+      v.ProcessJsonConfig();
+    });
 
   }
+
 }

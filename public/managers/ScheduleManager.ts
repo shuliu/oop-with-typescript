@@ -8,9 +8,9 @@ export class ScheduleManager extends JsonManager {
   private path: string = './config/Schedule.json';
 
   ProcessJsonConfig() {
-    let readSchedule = this.GetJsonObject(this.path);
-    for (let index = 0; index < readSchedule.schedules.length; index++) {
-      let schedule = new Schedule(readSchedule.schedules[index]);
+    let scheduleObject = this.GetJsonObject(this.path);
+    for (let index = 0; index < scheduleObject.schedules.length; index++) {
+      let schedule = new Schedule(scheduleObject.schedules[index]);
       this.schedules.push(schedule);
     }
 
