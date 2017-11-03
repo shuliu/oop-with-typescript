@@ -9,11 +9,6 @@ export abstract class JsonManager
     return JsonConvert;
 
   }
-    // protected object GetJsonObjectaaa()
-    // {
-    //     string configValue = File.ReadAllText(PATH);
-    //     return JsonConvert.DeserializeObject(configValue);
-    // }
 
-    // public abstract void ProcessJsonConfig();
+    public abstract ProcessJsonConfig(): void;
 }

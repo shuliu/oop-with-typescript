@@ -1,12 +1,15 @@
 import { Config } from './Config';
-import { ConfigManager } from './ConfigManager';
+import { ConfigManager } from './managers/ConfigManager';
+import { JsonManager } from './managers/JsonManager';
 import { Schedule } from './Schedule';
-import { ScheduleManager } from './ScheduleManager';
+import { ScheduleManager } from './managers/ScheduleManager';
 
 export class BackupService {
 
   private myConfig;
   private mySchedule;
+
+  private managers: JsonManager;
 
   constructor() {
     this.myConfig = new ConfigManager();
@@ -14,8 +17,8 @@ export class BackupService {
   }
 
   ProcessJSONConfig() {
-    this.myConfig.ProcessConfigs();
-    this.mySchedule.ProcessSchedules();
+    this.myConfig.ProcessJsonConfig();
+    this.mySchedule.ProcessJsonConfig();
   }
 
   DoBackup() {
@@ -34,7 +37,6 @@ export class BackupService {
       let connectionString = element.ConnectionString;
 
       console.log(element.Ext);
-      console.log('==============');
 
     }
 
@@ -46,7 +48,6 @@ export class BackupService {
       let interval = element.Interval;
 
       console.log(element.Ext);
-      console.log('==============');
 
     }
 

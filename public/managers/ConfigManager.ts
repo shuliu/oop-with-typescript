@@ -1,13 +1,14 @@
 import * as fs from 'fs';
 
-import { Config } from './Config';
+import { Config } from './../Config';
 import { JsonManager } from './JsonManager';
 
 export class ConfigManager extends JsonManager {
-  public configs: Array<Config> = [];
+  private configs: Array<Config> = [];
+  private path: string = './config/config.json';
 
-  ProcessConfigs() {
-    let readConfig = this.GetJsonObject('./config/config.json');
+  ProcessJsonConfig() {
+    let readConfig = this.GetJsonObject(this.path);
     for (let index = 0; index < readConfig.configs.length; index++) {
       let config = new Config(readConfig.configs[index]);
       this.configs.push(config);
@@ -21,5 +22,6 @@ export class ConfigManager extends JsonManager {
     }
     return this.configs.length;
   }
+
 
 }

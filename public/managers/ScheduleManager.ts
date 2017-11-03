@@ -1,13 +1,14 @@
 import * as fs from 'fs';
 
 import { JsonManager } from './JsonManager';
-import { Schedule } from './Schedule';
+import { Schedule } from './../Schedule';
 
 export class ScheduleManager extends JsonManager {
-  public schedules: Array<Schedule> = [];
+  private schedules: Array<Schedule> = [];
+  private path: string = './config/Schedule.json';
 
-  ProcessSchedules() {
-    let readSchedule = this.GetJsonObject('./config/Schedule.json');
+  ProcessJsonConfig() {
+    let readSchedule = this.GetJsonObject(this.path);
     for (let index = 0; index < readSchedule.schedules.length; index++) {
       let schedule = new Schedule(readSchedule.schedules[index]);
       this.schedules.push(schedule);
